@@ -1,7 +1,6 @@
 # https://adventofcode.com/2021/day/3
 
 
-from typing import NamedTuple
 from util import read_input
 from collections import Counter
 
