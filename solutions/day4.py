@@ -65,8 +65,25 @@ def part1(draws, board_list):
                     return draw * board.get_unmarked_sum()
 
 
+def part2(draws, board_list):
+    win_counter = 0
+    boards = [Board(board) for board in board_list]
+    for draw in draws:
+        for board in list(boards):
+            if draw in board.all_nums:
+                board.mark_board(draw)
+                if board.check_win() and win_counter < len(board_list) - 1:
+                    boards.remove(board)
+                    win_counter += 1 
+                elif board.check_win() and win_counter == len(board_list) - 1:
+                    return draw * board.get_unmarked_sum()
+                else:
+                    continue
+
 if __name__ == "__main__":
-    draws, board_list = read_puzzle("input/test/day4.txt")
-    assert part1(draws, board_list) == 4512
+    draws_test, board_list_test = read_puzzle("input/test/day4.txt")
+    assert part1(draws_test, board_list_test) == 4512
     draws, board_list = read_puzzle("input/day4.txt")
     print(f"Part 1: {part1(draws, board_list)}")
+    assert part2(draws_test, board_list_test) == 1924
+    print(f"Part 2: {part2(draws, board_list)}")
