@@ -40,8 +40,8 @@ class Board:
             unmarked_sum += sum(num for num, mark in zip(row, marks) if not mark)
         return unmarked_sum
 
-def read_puzzle(data):
-    data = read_input(data)
+def read_puzzle(data, test=False):
+    data = read_input(data, test)
     draws = [int(n) for n in data[0].split(',')]
     board_list, board = [], []
     for row in data[2:]:
@@ -81,9 +81,9 @@ def part2(draws, board_list):
                     continue
 
 if __name__ == "__main__":
-    draws_test, board_list_test = read_puzzle("input/test/day4.txt")
+    draws_test, board_list_test = read_puzzle("day4", test=True)
     assert part1(draws_test, board_list_test) == 4512
-    draws, board_list = read_puzzle("input/day4.txt")
+    draws, board_list = read_puzzle("day4")
     print(f"Part 1: {part1(draws, board_list)}")
     assert part2(draws_test, board_list_test) == 1924
     print(f"Part 2: {part2(draws, board_list)}")

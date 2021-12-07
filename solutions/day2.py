@@ -27,9 +27,9 @@ def part2(data):
     return position * depth
 
 if __name__ == "__main__":
-    data = read_input("input/test/day2.txt")
+    data = read_input("day2", test=True)
     assert part1(data) == 150
-    full_data = read_input("input/day2.txt")
+    full_data = read_input("day2")
     print(f"Part 1: {part1(full_data)}")
     assert part2(data) == 900
     print(f"Part 2: {part2(full_data)}")

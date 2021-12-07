@@ -14,8 +14,8 @@ def count_increasing_sum(data, window_size=1):
 
 
 if __name__ == "__main__":
-    full_data = read_input("input/day1.txt", as_int=True)
-    test_data = read_input("input/test/day1.txt", as_int=True)
+    full_data = read_input("day1", as_int=True)
+    test_data = read_input("day1", test=True, as_int=True)
     
     # PART 1
     print(f"Part 1 [Test]: {count_increasing_sum(test_data, window_size=1)}")

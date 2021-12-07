@@ -51,9 +51,9 @@ def part2(data):
     return int(ox_nums[0],2) * int(co2_nums[0], 2)
 
 if __name__ == "__main__":
-    data = read_input("input/test/day3.txt")
+    data = read_input("day3", test=True)
     assert part1(data) == 198
-    full_data = read_input("input/day3.txt")
+    full_data = read_input("day3")
     print(f"Part 1: {part1(full_data)}")
     assert part2(data) == 230
     print(f"Part 2: {part2(full_data)}")
