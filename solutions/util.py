@@ -1,4 +1,4 @@
-def read_input(path, test=False, as_int=False, single_line=False):
+def read_input(path, test=False, as_int=False, single_line=False, sep=","):
     base_dir = "input"
     if test:
         path = f"{base_dir}/test/{path}"
@@ -9,7 +9,6 @@ def read_input(path, test=False, as_int=False, single_line=False):
     if single_line:
         with open(path) as f:
             puzzle_input = f.read()
-        sep = puzzle_input[1]
         puzzle_input = puzzle_input.split(sep)    
     else:
         with open(path) as f:
