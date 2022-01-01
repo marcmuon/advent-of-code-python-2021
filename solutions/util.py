@@ -1,4 +1,4 @@
-def read_input(path, test=False, as_int=False, single_line=False, sep=","):
+def read_input(path, test=False, as_int=False, as_lists_of_ints=False, single_line=False, sep=","):
     base_dir = "input"
     if test:
         path = f"{base_dir}/test/{path}"
@@ -15,4 +15,6 @@ def read_input(path, test=False, as_int=False, single_line=False, sep=","):
             puzzle_input = f.read().splitlines()
     if as_int:
         puzzle_input = [int(n) for n in puzzle_input]
+    if as_lists_of_ints:
+        puzzle_input = [[int(ch) for ch in line] for line in puzzle_input]
     return puzzle_input
